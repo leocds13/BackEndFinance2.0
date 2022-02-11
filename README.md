@@ -7,6 +7,6 @@
  - - { } Alterar usuario
  - - { } Consultar usuario
  - - { } deletar usuario
- - - {x} Authenticar usuario - get: '/users/:id' - Url sended to email!
- - - { } Login usuario
+ - - {x} Authenticar usuario - get: '/users/:id' - Url enviada para o email!
+ - - {x} Login usuario - post: '/users/login', body: {email, password} - retorna no body:{token}
  - - { } Logout usuario

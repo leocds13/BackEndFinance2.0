@@ -2,9 +2,10 @@ import { ErrorExeption } from "../../../entities/ErrorExeption";
 import { User } from "../../../entities/User";
 import { IMailProvider } from "../../../providers/MailProviders/IMailProvider";
 import { IUsersRepository } from "../../../repositories/users/IUsersRepository";
+import { IUseCase } from "../../IUseCase";
 import { ICreateUserRequestDTO } from "./CreateUserDTO";
 
-export class CreateUserUseCase {
+export class CreateUserUseCase implements IUseCase {
 	constructor(
 		private usersRepository: IUsersRepository,
 		private mailProvider: IMailProvider

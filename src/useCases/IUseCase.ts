@@ -1,3 +1,3 @@
 export interface IUseCase {
-    execute(data?:any): Promise<void>
+    execute(data?:any): Promise<any>
 }
