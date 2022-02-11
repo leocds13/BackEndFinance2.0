@@ -2,7 +2,7 @@
 # Iniciou com um Desafio da Alura e vai se tornar o backend de um app.
 ##
 
- - Cadatro de usuario
+ - Usuario
     {x} Criar usuario
     { } Alterar usuario
     { } Consultar usuario
