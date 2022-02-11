@@ -3,10 +3,10 @@
 ##
 
  - Usuario
-    {x} Criar usuario
-    { } Alterar usuario
-    { } Consultar usuario
-    { } deletar usuario
-    {x} Authenticar usuario
-    { } Login usuario
-    { } Logout usuario
+ - - {x} Criar usuario
+ - - { } Alterar usuario
+ - - { } Consultar usuario
+ - - { } deletar usuario
+ - - {x} Authenticar usuario
+ - - { } Login usuario
+ - - { } Logout usuario
