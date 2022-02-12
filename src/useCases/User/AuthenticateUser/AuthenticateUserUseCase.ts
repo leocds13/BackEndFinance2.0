@@ -1,5 +1,5 @@
 import { ErrorExeption } from "../../../entities/ErrorExeption";
-import { IUsersRepository } from "../../../repositories/users/IUsersRepository";
+import { IUsersRepository } from "../../../repositories/Users/IUsersRepository";
 import { IUseCase } from "../../IUseCase";
 
 export class AuthenticateUserUseCase implements IUseCase {

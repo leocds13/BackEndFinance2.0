@@ -12,7 +12,7 @@ export class PrismaPostgresUsersReporitory implements IUsersRepository {
 	async findById(id: string): Promise<User | null> {
 		const prismaUser = await this.prismaClient.user.findUnique({
 			where: {
-				id: id
+				id: id,
 			},
 		});
 
@@ -60,7 +60,7 @@ export class PrismaPostgresUsersReporitory implements IUsersRepository {
 	async update(id: string, payload: Partial<User>): Promise<void> {
 		await this.prismaClient.user.update({
 			where: {
-				id: id
+				id: id,
 			},
 			data: { ...payload },
 		});

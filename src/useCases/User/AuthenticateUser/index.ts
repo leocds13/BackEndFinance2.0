@@ -1,4 +1,4 @@
-import { PrismaPostgresUsersReporitory } from "../../../repositories/users/implementations/PrismaPostgresUsersRepository";
+import { PrismaPostgresUsersReporitory } from "../../../repositories/Users/implementations/PrismaPostgresRepository";
 import { AuthenticateUserController } from "./AuthenticateUserController";
 import { AuthenticateUserUseCase } from "./AuthenticateUserUseCase";
 

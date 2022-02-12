@@ -19,14 +19,21 @@ model User {
   authenticated Boolean   @default(false)
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
-  category  Categories[]
+  category        Categories[]
+  blacklist       Blacklisttokens[]
+}
+
+model Blacklisttokens {
+  token   String @id @db.VarChar(200)
+  user_id String @db.VarChar(100)
+  user    User   @relation(fields: [user_id], references: [id])
 }
 
 model Categories {
   id        String    @id @db.VarChar(100)
   name      String    @db.VarChar(100)
   obs       String
-  user      User?     @relation(fields: [user_id], references: [id])
+  user      User      @relation(fields: [user_id], references: [id])
   user_id   String    @db.VarChar(100)
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt

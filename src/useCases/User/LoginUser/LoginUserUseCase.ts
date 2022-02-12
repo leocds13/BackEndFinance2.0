@@ -1,7 +1,7 @@
 import { compare } from "bcrypt";
 import { ErrorExeption } from "../../../entities/ErrorExeption";
 import { ITokenProvider } from "../../../providers/TokenProviders/ITokenProvider";
-import { IUsersRepository } from "../../../repositories/users/IUsersRepository";
+import { IUsersRepository } from "../../../repositories/Users/IUsersRepository";
 import { IUseCase } from "../../IUseCase";
 import { ILoginUserRequestDTO } from "./LoginUserDTO";
 

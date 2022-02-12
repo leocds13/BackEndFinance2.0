@@ -1,4 +1,5 @@
 import { NextFunction, Request, Response } from "express";
+import { checkSchema } from "express-validator";
 import { validate } from "../../../midleware/validate";
 import { AuthenticateUserValidationSchema } from "./AuthenticateUserDTO";
 import { AuthenticateUserUseCase } from "./AuthenticateUserUseCase";
@@ -12,7 +13,7 @@ export class AuthenticateUserController {
 		next: NextFunction
 	) {
 		try {
-			await validate(req, AuthenticateUserValidationSchema);
+			await validate(req, checkSchema(AuthenticateUserValidationSchema).run);
 
 			const { authCode } = req.params;
 

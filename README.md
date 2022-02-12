@@ -3,10 +3,10 @@
 ##
 
  - Usuario
- - - {x} Criar usuario - post: '/users', body:{name, email, password}
+ - - {X} Criar usuario - post: '/users', body:{name, email, password}
  - - { } Alterar usuario
  - - { } Consultar usuario
  - - { } deletar usuario
- - - {x} Authenticar usuario - get: '/users/:id' - Url enviada para o email!
- - - {x} Login usuario - post: '/users/login', body: {email, password} - retorna no body:{token}
- - - { } Logout usuario
+ - - {X} Authenticar usuario - get: '/users/:id' => Url enviada para o email!
+ - - {X} Login usuario - post: '/users/login', body: {email, password} => retorna no body:{token} e cookie:{token}
+ - - {X} Logout usuario - get: '/users/logout', cookie:{token}

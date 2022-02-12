@@ -1,7 +1,7 @@
 import { ErrorExeption } from "../../../entities/ErrorExeption";
 import { User } from "../../../entities/User";
 import { IMailProvider } from "../../../providers/MailProviders/IMailProvider";
-import { IUsersRepository } from "../../../repositories/users/IUsersRepository";
+import { IUsersRepository } from "../../../repositories/Users/IUsersRepository";
 import { IUseCase } from "../../IUseCase";
 import { ICreateUserRequestDTO } from "./CreateUserDTO";
 

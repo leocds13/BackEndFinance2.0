@@ -1,9 +1,9 @@
 import express, { Application } from "express";
 import helmet from "helmet";
 import { Server } from "http";
-import { authenticator } from "./midleware/authenticator";
 import { errorHandler } from "./midleware/errorHandler";
 import { rootRouter } from "./routes";
+import cookieParser from 'cookie-parser';
 
 export class App {
 	private app: Application;
@@ -17,8 +17,8 @@ export class App {
 		// MidleWares
 		this.app.use(helmet());
 		this.app.use(express.json());
-		this.app.use(authenticator());
-
+		this.app.use(cookieParser());
+		
 		// Routes
 		this.app.use(rootRouter);
 

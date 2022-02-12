@@ -7,9 +7,10 @@ import {
 } from "./LoginUserDTO";
 import { validate } from "../../../midleware/validate";
 import { LoginUserUseCase } from "./LoginUserUseCase";
+import { checkSchema } from "express-validator";
 
 export class LoginUserController implements IController {
-    constructor(private loginUserUseCase: LoginUserUseCase) {}
+	constructor(private loginUserUseCase: LoginUserUseCase) {}
 
 	async handle(
 		req: Request<ParamsDictionary, any, ILoginUserRequestDTO>,
@@ -17,16 +18,16 @@ export class LoginUserController implements IController {
 		next: NextFunction
 	): Promise<void> {
 		try {
-			await validate(req, LoginUserValidationSchema);
+			await validate(req, checkSchema(LoginUserValidationSchema).run);
 
-            const { email, password } = req.body;
+			const { email, password } = req.body;
 
-            const token = await this.loginUserUseCase.execute({
-                email,
-                password
-            })
+			const token = await this.loginUserUseCase.execute({
+				email,
+				password,
+			});
 
-			res.status(200).json({
+			res.status(200).cookie("token", token).json({
 				token,
 			});
 		} catch (e) {

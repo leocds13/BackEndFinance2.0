@@ -1,9 +1,12 @@
 import { Request } from "express";
-import { checkSchema, Schema, validationResult } from "express-validator";
+import { validationResult } from "express-validator";
 import { ErrorExeption, ValidationExeption } from "../entities/ErrorExeption";
 
-export async function validate(req: Request, schema: Schema) {
-	await checkSchema(schema).run(req);
+export async function validate(
+	req: Request,
+	validationRunFunc: (req: Request) => Promise<any>
+) {
+	await validationRunFunc(req);
 
 	const errors = validationResult(req);
 

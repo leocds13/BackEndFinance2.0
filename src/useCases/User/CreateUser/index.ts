@@ -1,5 +1,5 @@
 import { MailtrapMailProvider } from "../../../providers/MailProviders/implementations/MailtrapMailProvider";
-import { PrismaPostgresUsersReporitory } from "../../../repositories/users/implementations/PrismaPostgresUsersRepository";
+import { PrismaPostgresUsersReporitory } from "../../../repositories/Users/implementations/PrismaPostgresRepository";
 import { CreateUserController } from "./CreateUserController";
 import { CreateUserUseCase } from "./CreateUserUseCase";
 
