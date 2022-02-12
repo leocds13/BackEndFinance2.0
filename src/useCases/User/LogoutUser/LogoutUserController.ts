@@ -15,18 +15,7 @@ export class LogoutUserController implements IController {
 		next: NextFunction
 	): Promise<void> {
 		try {
-			const validation = cookie("token")
-				.exists({ checkFalsy: true, checkNull: true })
-				.withMessage("cookie.token is required")
-				.bail()
-				.not()
-				.isEmpty({ ignore_whitespace: true })
-				.withMessage("cookie.token canot be Blank!")
-				.bail();
-
-			await validate(req, validation.run);
-
-			const token = req.cookies.token || req.headers.authorization;
+			const token = req.cookies.token;
 			
 			await this.logoutUserUseCase.execute({
 				token,

@@ -19,15 +19,9 @@ export class AuthenticatorUseCase implements IUseCase {
 
 		// Token BlackListed
 		if (tokenObj) {
-			const user_id = await this.tokenProvider.verify(tokenObj.token);
-
-			if (!user_id) {
-				await this.blackListTokensRepository.delete(tokenObj.token);
-			}
-
 			throw new ErrorExeption({
 				status: 401,
-				err: "Invalid token!",
+				err: "Token unactivated!",
 			});
 		}
 

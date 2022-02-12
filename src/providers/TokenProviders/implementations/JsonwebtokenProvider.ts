@@ -12,11 +12,13 @@ export class JsonwebtokenProvider implements ITokenProvider {
 	}
 
 	async verify(token: string): Promise<string | void> {
-		const payload = jwt.verify(
-            token,
-            process.env.JWT_SECRET || ""
-        );
-        
-        return (<{id: string}>payload).id
+		try {
+			const payload = jwt.verify(
+				token,
+				process.env.JWT_SECRET || ""
+			);
+
+			return (<{ id: string }>payload).id;
+		} catch (e) {}
 	}
 }
