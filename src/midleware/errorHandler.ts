@@ -1,4 +1,4 @@
-import { ErrorHandlerController } from "../useCases/ErroHandler/ErrorHandlerController";
+import { ErrorHandlerController } from "./ErroHandler/ErrorHandlerController";
 
 function errorHandler() {
 	// implementar funcionalidade de errorHandler
