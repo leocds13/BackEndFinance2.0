@@ -17,7 +17,7 @@ export class ErrorExeption extends Error {
 	public err?: string | ValidationExeption[];
 
 	constructor(props: Omit<ErrorExeption, keyof Error>) {
-		super(props.err?.toString());
+		super('Error:');
 
 		this.status = props.status;
 		this.err = props.err || "Unexpected error ocurred!";

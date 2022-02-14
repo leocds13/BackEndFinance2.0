@@ -4,11 +4,13 @@ import { AuthenticateUserRoute } from "./AuthenticateUserRoute";
 import { CreateUserRoute } from "./CreateUserRoute";
 import { LoginUserRoute } from "./LoginUserRoute";
 import { LogoutUserRoute } from "./LogoutUserRoute";
+import { RequestUserRoute } from "./RequestUserRoute";
 
 const userRouter = Router();
 
 // CRUD
 userRouter.post("/", CreateUserRoute());
+userRouter.get("/", AuthenticatorMiddleware(), RequestUserRoute());
 
 // Tokenizing
 userRouter.post("/login", LoginUserRoute());

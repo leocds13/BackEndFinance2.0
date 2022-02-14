@@ -4,6 +4,7 @@ import { Server } from "http";
 import { errorHandler } from "./midleware/errorHandler";
 import { rootRouter } from "./routes";
 import cookieParser from 'cookie-parser';
+import expressValidator from 'express-validator';
 
 export class App {
 	private app: Application;

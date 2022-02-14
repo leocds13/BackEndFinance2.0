@@ -9,7 +9,7 @@ export class ErrorHandlerController {
 		next: NextFunction
 	): Promise<Response> {
 		const status = error.status || 500;
-		const err = error.err || "Ocorreu um erro interno!";
+		const err = error.err || "Something went wrong, sorry!";
 
 		if (status === 500) {
 			console.log(error);

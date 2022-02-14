@@ -51,6 +51,22 @@ export class PrismaPostgresUsersReporitory implements IUsersRepository {
 		return user;
 	}
 
+	async findAll(): Promise<User[]> {
+		const users = await this.prismaClient.user.findMany();
+
+		return users.map((user) => {
+			return new User(
+				{
+					email: user.email,
+					name: user.name,
+					password: user.password,
+					authenticated: user.authenticated,
+				},
+				user.id
+			);
+		});
+	}
+
 	async save(user: User): Promise<void> {
 		await this.prismaClient.user.create({
 			data: { ...user },
