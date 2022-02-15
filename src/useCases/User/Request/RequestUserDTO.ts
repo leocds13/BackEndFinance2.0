@@ -54,6 +54,7 @@ export const RequestValidationSchema: Schema = {
 						"Inform at least and only 1 property!"
 					);
 				}
+				return Promise.resolve();
 			},
 			errorMessage: "Inform at least and only 1 property!",
 		},

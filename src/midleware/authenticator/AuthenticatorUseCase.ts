@@ -41,7 +41,7 @@ export class AuthenticatorUseCase implements IUseCase {
 		if (!user) {
 			throw new ErrorExeption({
 				status: 400,
-				err: "User doen't exists",
+				err: "Invalid token!",
 			});
 		}
 

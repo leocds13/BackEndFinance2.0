@@ -7,8 +7,8 @@ import { IUpdateUserRequestDTO } from "./UpdateUserDTO";
 export class UpdateUserUseCase implements IUseCase {
 	constructor(private usersRepository: IUsersRepository) {}
 
-	async execute(user: IUpdateUserRequestDTO): Promise<void> {		
-        if (user.email) {
+	async execute(user: IUpdateUserRequestDTO): Promise<void> {
+		if (user.email) {
 			const userAlreadyExists = await this.usersRepository.findByEmail(
 				user.email
 			);
@@ -21,6 +21,13 @@ export class UpdateUserUseCase implements IUseCase {
 			}
 		}
 
+		if (user.params_id !== user.user_id) {
+			throw new ErrorExeption({
+				status: 400,
+				err: "You can't update other users information!",
+			});
+		}
+
 		if (user.password) {
 			const tempUser = new User({
 				password: user.password,
@@ -31,6 +38,8 @@ export class UpdateUserUseCase implements IUseCase {
 			user.password = tempUser.password;
 		}
 
-		await this.usersRepository.update(user.id, user);
+		const { user_id: _, params_id: id, ...payload } = user;
+
+		await this.usersRepository.update(id, payload);
 	}
 }

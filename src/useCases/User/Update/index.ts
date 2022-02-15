@@ -8,4 +8,4 @@ const updateUserUseCase = new UpdateUserUseCase(prismaPostgresUsersRepository);
 
 const updateUserController = new UpdateUserController(updateUserUseCase);
 
-export { updateUserController };
+export { updateUserUseCase, updateUserController };

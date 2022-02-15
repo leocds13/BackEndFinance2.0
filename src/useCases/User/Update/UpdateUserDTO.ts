@@ -1,7 +1,12 @@
 import { Schema } from "express-validator";
-import { User } from "../../../entities/User";
 
 export const UpdateUserValidationSchema: Schema = {
+	id: {
+		in: "params",
+		isUUID: {
+			errorMessage: "Invalid id!",
+		},
+	},
 	name: {
 		in: "body",
 		optional: true,
@@ -13,7 +18,7 @@ export const UpdateUserValidationSchema: Schema = {
 			errorMessage: "Name canot be empty!",
 			bail: true,
 		},
-		isAlpha: {
+		isString: {
 			errorMessage: "Name invalid!",
 			bail: true,
 		},
@@ -71,12 +76,16 @@ export const UpdateUserValidationSchema: Schema = {
 				if (Object.keys(body).length === 0) {
 					return Promise.reject("Inform at least 1 property");
 				}
-                return Promise.resolve()
-			}
+				return Promise.resolve();
+			},
 		},
 	},
 };
 
-export interface IUpdateUserRequestDTO extends Omit<Partial<User>, "id"> {
-    id: string
+export interface IUpdateUserRequestDTO {
+	name?: string;
+	email?: string;
+	password?: string;
+	params_id: string;
+	user_id: string;
 }

@@ -36,11 +36,12 @@ export class UpdateUserController implements IController {
 				});
 			}
 
-			this.updateUserUseCase.execute({
+			await this.updateUserUseCase.execute({
 				email,
 				name,
 				password,
-				id: res.locals.user.id,
+				params_id: req.params.id,
+				user_id: res.locals.user.id,
 			});
 
 			res.status(201).send();

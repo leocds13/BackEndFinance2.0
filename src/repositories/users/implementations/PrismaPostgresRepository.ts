@@ -81,4 +81,10 @@ export class PrismaPostgresUsersReporitory implements IUsersRepository {
 			data: { ...payload },
 		});
 	}
+
+	async delete(id: string): Promise<void> {
+		await this.prismaClient.user.delete({
+			where: { id },
+		});
+	}
 }

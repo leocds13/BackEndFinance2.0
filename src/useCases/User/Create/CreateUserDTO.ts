@@ -19,7 +19,7 @@ export const CreateUserValidationSchema: Schema = {
 			errorMessage: "Name canot be empty!",
 			bail: true
 		},
-		isAlpha: {
+		isString: {
 			errorMessage: "Name invalid!",
 			bail: true
 		},

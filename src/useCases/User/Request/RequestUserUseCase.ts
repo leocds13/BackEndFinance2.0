@@ -8,8 +8,6 @@ export class RequestUserUseCase implements IUseCase {
 	constructor(private usersRepository: IUsersRepository) {}
 
 	async execute(data: IRequestUserRequestDTO): Promise<(User | null)[]> {
-		console.log(data);
-
 		let users: (User | null)[];
 
 		switch (data.type) {

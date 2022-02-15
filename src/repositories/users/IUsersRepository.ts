@@ -7,4 +7,5 @@ export interface IUsersRepository {
 	
 	save(user: User): Promise<void>;
 	update(id: string, payload: Partial<User>): Promise<void>;
+	delete(id: string): Promise<void>;
 }
