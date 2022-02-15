@@ -20,6 +20,13 @@ export class LoginUserUseCase implements IUseCase {
 				err: "Email not found!",
 			});
 		}
+		
+		if (user.authenticated === false) {
+			throw new ErrorExeption({
+				status: 400,
+				err: "User not authenticate, please valid your email!",
+			});
+		}
 
 		const passValidated = await compare(data.password, user.password);
 

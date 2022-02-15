@@ -20,9 +20,7 @@ export class PrismaPostgresUsersReporitory implements IUsersRepository {
 			prismaUser &&
 			new User(
 				{
-					email: prismaUser.email,
-					name: prismaUser.name,
-					password: prismaUser.password,
+					...prismaUser
 				},
 				prismaUser.id
 			);
@@ -41,9 +39,7 @@ export class PrismaPostgresUsersReporitory implements IUsersRepository {
 			prismaUser &&
 			new User(
 				{
-					email: prismaUser.email,
-					name: prismaUser.name,
-					password: prismaUser.password,
+					...prismaUser
 				},
 				prismaUser.id
 			);
@@ -57,10 +53,7 @@ export class PrismaPostgresUsersReporitory implements IUsersRepository {
 		return users.map((user) => {
 			return new User(
 				{
-					email: user.email,
-					name: user.name,
-					password: user.password,
-					authenticated: user.authenticated,
+					...user
 				},
 				user.id
 			);

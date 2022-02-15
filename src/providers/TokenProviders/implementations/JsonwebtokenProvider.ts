@@ -5,7 +5,7 @@ import { ErrorExeption } from "../../../entities/ErrorExeption";
 export class JsonwebtokenProvider implements ITokenProvider {
 	async assing(id: string): Promise<string> {
 		const token = jwt.sign({ id }, process.env.JWT_SECRET || "", {
-			expiresIn: "7d",
+			expiresIn: process.env.JWT_EXPIRESIN || '1d',
 		});
 
 		return token;
