@@ -14,14 +14,7 @@ export class RequestUserController implements IController {
 		next: NextFunction
 	): Promise<void> {
 		try {
-			const validation = oneOf([
-				checkSchema(RequestValidationSchema),
-				body("").custom((_, { req: { body } }) => {
-					if (Object.keys(body).length > 1) {
-						return Promise.reject("Inform only 1 property");
-					}
-				}),
-			]);
+			const validation = checkSchema(RequestValidationSchema);
 
 			await validate(req, validation.run);
 

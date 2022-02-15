@@ -43,10 +43,25 @@ export const RequestValidationSchema: Schema = {
 			bail: true,
 		},
 	},
+	_: {
+		custom: {
+			options: (_, { req: { body } }) => {
+				if (
+					Object.keys(body).length > 1 ||
+					Object.keys(body).length === 0
+				) {
+					return Promise.reject(
+						"Inform at least and only 1 property!"
+					);
+				}
+			},
+			errorMessage: "Inform at least and only 1 property!",
+		},
+	},
 };
 
 export interface IRequestUserRequestDTO {
-	type: string,
-	value: string | boolean,
-	user_id: string
+	type: string;
+	value: string | boolean;
+	user_id: string;
 }

@@ -36,7 +36,7 @@ export class RequestUserUseCase implements IUseCase {
 			default:
 				throw new ErrorExeption({
 					status: 500,
-					err: "There was an error on validate witch type of request you want, please contact the suport!",
+					err: "There was an error on validate on witch type of request you want, please contact the suport!",
 				});
 		}
 
