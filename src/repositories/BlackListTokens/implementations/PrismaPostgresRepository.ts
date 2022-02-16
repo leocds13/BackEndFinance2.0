@@ -1,5 +1,4 @@
 import { PrismaClient } from "@prisma/client";
-import { ErrorExeption } from "../../../entities/ErrorExeption";
 import { Token } from "../../../entities/Token";
 import { IBlackListTokensRepository } from "../IBlackListTokensRepository";
 

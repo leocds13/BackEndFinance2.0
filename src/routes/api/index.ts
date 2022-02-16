@@ -1,12 +1,8 @@
 import { Router } from "express";
+import { categoryRouter } from "./Category";
 
 const apiRouter = Router();
 
-// CRUD
-apiRouter.get("/", (req, res, next) => {
-	console.log("Rota precisa ser authenticada!");
-    console.log(`existir user`, res.locals)
-	res.sendStatus(200);
-});
+apiRouter.use("/categories", categoryRouter);
 
 export { apiRouter };

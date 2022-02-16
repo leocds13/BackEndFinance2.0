@@ -32,7 +32,7 @@ model Blacklisttokens {
 model Categories {
   id        String    @id @db.VarChar(100)
   name      String    @db.VarChar(100)
-  obs       String
+  description String?
   user      User      @relation(fields: [user_id], references: [id])
   user_id   String    @db.VarChar(100)
   createdAt DateTime  @default(now())
