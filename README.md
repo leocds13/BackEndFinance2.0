@@ -12,7 +12,7 @@
  - - {X} Logout usuario - get: '/users/logout', cookie:{token}
 
  - Categorias
- - - {X} Criar categoria - post: '/api/categories', body:{name, description?}, cookie: {token}
- - - { } Consultar categoria
+ - - {X} Criar categoria - post: '/api/categories', body: {name, description?}, cookie: {token}
+ - - {X} Consultar categoria - get: '/api/categories', query: {name?, description?}, cookie: {token}
  - - { } Alterar categoria
  - - { } Deletar categoria
