@@ -11,20 +11,24 @@ export class RequestCategoryUseCase implements IUseCase {
 		let categs =
 			(await this.categoryRepository.findByUserId(data.user_id)) || [];
 
-		if (data.name) {
-			categs = categs.filter((val) =>
-				RegExp(data.name?.toLowerCase() || "").test(
-					val.name.toLowerCase()
-				)
-			);
-		}
+		if (data.categ_id) {
+			categs = categs.filter((val) => data.categ_id == val.id);
+		} else {
+			if (data.data.name) {
+				categs = categs.filter((val) =>
+					RegExp(data.data.name?.toLowerCase() || "").test(
+						val.name.toLowerCase()
+					)
+				);
+			}
 
-		if (data.description) {
-			categs = categs.filter((val) =>
-				RegExp(data.description?.toLowerCase() || "").test(
-					val.description ? val.description.toLowerCase() : "" // O campo pose ser null
-				)
-			);
+			if (data.data.description) {
+				categs = categs.filter((val) =>
+					RegExp(data.data.description?.toLowerCase() || "").test(
+						val.description ? val.description.toLowerCase() : "" // O campo pose ser null
+					)
+				);
+			}
 		}
 
 		if (categs.length === 0) {

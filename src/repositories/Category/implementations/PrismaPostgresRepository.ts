@@ -54,4 +54,15 @@ export class PrismaPostgresCategoryReporitory implements ICategoryRepository {
 			}
 		})
 	}
+
+	async update(categ: Partial<Category>): Promise<void> {
+		await this.prismaClient.categories.update({
+			where: {
+				id: categ.id
+			},
+			data: {
+				...categ
+			}
+		})
+	}
 }

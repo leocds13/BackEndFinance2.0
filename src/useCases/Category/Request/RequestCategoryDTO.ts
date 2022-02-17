@@ -1,6 +1,14 @@
 import { Schema } from "express-validator";
 
 export const RequestCategoryValidationSchema: Schema = {
+	id: {
+		in: "params",
+		optional: true,
+		isUUID: {
+			errorMessage: "Invalid id!",
+			bail: true,
+		},
+	},
 	name: {
 		in: "query",
 		optional: true,
@@ -37,6 +45,9 @@ export const RequestCategoryValidationSchema: Schema = {
 
 export interface IRequestCategoryRequestDTO {
 	user_id: string;
-	name?: string;
-	description?: string;
+	categ_id?: string;
+	data: {
+		name?: string;
+		description?: string;
+	}
 }

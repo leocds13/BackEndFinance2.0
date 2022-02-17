@@ -21,11 +21,15 @@ export class RequestCategoryController implements IController {
 
 			const user: User = res.locals.user;
 			const { name, description } = req.query;
+			const {id} = req.params;
 
 			const categs = await this.requestCategoryUseCase.execute({ 
                 user_id: user.id,
-                name: (<string>name),
-                description: (<string>description),
+				categ_id: id,
+				data: {
+					name: (<string>name),
+					description: (<string>description),
+				}
             });
 
 			res.status(200).json(categs);

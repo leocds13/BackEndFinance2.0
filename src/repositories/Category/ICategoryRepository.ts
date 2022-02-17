@@ -6,4 +6,5 @@ export interface ICategoryRepository {
 	findByUserId(user_id: string): Promise<Category[] | null>;
 
 	save(categ: Category): Promise<void>;
+	update(categ: Partial<Category>): Promise<void>;
 }

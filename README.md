@@ -13,6 +13,6 @@
 
  - Categorias
  - - {X} Criar categoria - post: '/api/categories', body: {name, description?}, cookie: {token}
- - - {X} Consultar categoria - get: '/api/categories', query: {name?, description?}, cookie: {token}
- - - { } Alterar categoria
+ - - {X} Consultar categoria - get: '/api/categories/?:id', query: {name?, description?}, cookie: {token} => Array de Categorias
+ - - {X} Alterar categoria - put: '/api/categories/:id', body: {name?, description?}, cookie: {token}
  - - { } Deletar categoria
