@@ -1,6 +1,6 @@
 import { ErrorExeption } from "../../../entities/ErrorExeption";
-import { IUsersRepository } from "../../../repositories/Users/IUsersRepository";
-import { IUseCase } from "../../IUseCase";
+import { IUsersRepository } from "../../../repositories/IUsersRepository";
+import { IUseCase } from "../../../types";
 import { IDeleteUserRequestDTO } from "./DeleteUserDTO";
 
 export class DeleteUserUseCase implements IUseCase {

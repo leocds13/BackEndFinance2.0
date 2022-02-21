@@ -1,7 +1,7 @@
 import { Category } from "../../../entities/Category";
 import { ErrorExeption } from "../../../entities/ErrorExeption";
-import { ICategoryRepository } from "../../../repositories/Category/ICategoryRepository";
-import { IUseCase } from "../../IUseCase";
+import { ICategoryRepository } from "../../../repositories/ICategoryRepository";
+import { IUseCase } from "../../../types";
 import { IRequestCategoryRequestDTO } from "./RequestCategoryDTO";
 
 export class RequestCategoryUseCase implements IUseCase {

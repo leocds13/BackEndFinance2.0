@@ -1,8 +1,8 @@
 import { ErrorExeption } from "../../../entities/ErrorExeption";
 import { Token } from "../../../entities/Token";
 import { ITokenProvider } from "../../../providers/TokenProviders/ITokenProvider";
-import { IBlackListTokensRepository } from "../../../repositories/BlackListTokens/IBlackListTokensRepository";
-import { IUseCase } from "../../IUseCase";
+import { IBlackListTokensRepository } from "../../../repositories/IBlackListTokensRepository";
+import { IUseCase } from "../../../types";
 import { ILogoutUserRequestDTO } from "./LogoutUserDTO";
 
 export class LogoutUserUseCase implements IUseCase {

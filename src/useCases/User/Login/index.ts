@@ -1,5 +1,5 @@
 import { JsonwebtokenProvider } from "../../../providers/TokenProviders/implementations/JsonwebtokenProvider";
-import { PrismaPostgresUsersReporitory } from "../../../repositories/Users/implementations/PrismaPostgresRepository";
+import { PrismaPostgresUsersReporitory } from "../../../repositories/Prisma/Postgres/User";
 import { LoginUserController } from "./LoginUserController";
 import { LoginUserUseCase } from "./LoginUserUseCase";
 

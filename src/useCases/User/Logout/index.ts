@@ -1,5 +1,5 @@
 import { JsonwebtokenProvider } from "../../../providers/TokenProviders/implementations/JsonwebtokenProvider";
-import { PrismaPostgresBlackListTokensReporitory } from "../../../repositories/BlackListTokens/implementations/PrismaPostgresRepository";
+import { PrismaPostgresBlackListTokensReporitory } from "../../../repositories/Prisma/Postgres/BlackListTokens";
 import { LogoutUserController } from "./LogoutUserController";
 import { LogoutUserUseCase } from "./LogoutUserUseCase";
 

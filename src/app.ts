@@ -1,10 +1,9 @@
 import express, { Application } from "express";
 import helmet from "helmet";
 import { Server } from "http";
-import { errorHandler } from "./midleware/errorHandler";
 import { rootRouter } from "./routes";
 import cookieParser from 'cookie-parser';
-import expressValidator from 'express-validator';
+import { errorHandlerMidleware } from "./midleware/ErrorHandlerMidleware";
 
 export class App {
 	private app: Application;
@@ -24,7 +23,7 @@ export class App {
 		this.app.use(rootRouter);
 
 		// MidleWare Erro Handler
-		this.app.use(errorHandler());
+		this.app.use(errorHandlerMidleware());
 	}
 
 	public async start(port: number, callback: () => void): Promise<Server> {

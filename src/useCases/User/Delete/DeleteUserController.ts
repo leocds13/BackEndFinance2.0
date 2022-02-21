@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import { param } from "express-validator";
 import { validate } from "../../../midleware/validate";
-import { IController } from "../../IController";
+import { IController } from "../../../types";
 import { DeleteUserUseCase } from "./DeleteUserUseCase";
 
 export class DeleteUserController implements IController {

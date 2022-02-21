@@ -5,7 +5,7 @@ import {
 	ValidationExeption,
 } from "../../../entities/ErrorExeption";
 import { validate } from "../../../midleware/validate";
-import { IController } from "../../IController";
+import { IController } from "../../../types";
 import { UpdateUserValidationSchema } from "./UpdateUserDTO";
 import { UpdateUserUseCase } from "./UpdateUserUseCase";
 

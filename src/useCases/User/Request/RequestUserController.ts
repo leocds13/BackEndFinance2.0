@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
-import { body, checkSchema, oneOf } from "express-validator";
+import { checkSchema } from "express-validator";
 import { validate } from "../../../midleware/validate";
-import { IController } from "../../IController";
+import { IController } from "../../../types";
 import { RequestValidationSchema } from "./RequestUserDTO";
 import { RequestUserUseCase } from "./RequestUserUseCase";
 

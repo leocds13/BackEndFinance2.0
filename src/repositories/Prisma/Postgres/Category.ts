@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import { Category } from "../../../entities/Category";
-import { ICategoryRepository } from "../ICategoryRepository";
+import { ICategoryRepository } from "../../ICategoryRepository";
 
 export class PrismaPostgresCategoryReporitory implements ICategoryRepository {
 	private prismaClient: PrismaClient;

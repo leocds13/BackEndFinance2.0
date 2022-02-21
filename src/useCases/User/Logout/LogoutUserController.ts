@@ -1,10 +1,8 @@
 import { Request, Response, NextFunction } from "express";
 import { ParamsDictionary } from "express-serve-static-core";
-import { IController } from "../../IController";
+import { IController } from "../../../types";
 import { ILogoutUserRequestDTO } from "./LogoutUserDTO";
-import { validate } from "../../../midleware/validate";
 import { LogoutUserUseCase } from "./LogoutUserUseCase";
-import { cookie} from "express-validator";
 
 export class LogoutUserController implements IController {
 	constructor(private logoutUserUseCase: LogoutUserUseCase) {}

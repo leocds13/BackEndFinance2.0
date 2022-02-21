@@ -1,10 +1,11 @@
 import { NextFunction, Request, Response } from "express";
 import { checkSchema } from "express-validator";
 import { validate } from "../../../midleware/validate";
+import { IController } from "../../../types";
 import { AuthenticateUserValidationSchema } from "./AuthenticateUserDTO";
 import { AuthenticateUserUseCase } from "./AuthenticateUserUseCase";
 
-export class AuthenticateUserController {
+export class AuthenticateUserController implements IController {
 	constructor(private authenticateUserUseCase: AuthenticateUserUseCase) {}
 
 	async handle(

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { AuthenticatorMiddleware } from "../AuthenticatorMiddleware";
+import { AuthenticatorMiddleware } from "../../midleware/AuthenticatorMiddleware";
 import { AuthenticateUserRoute } from "./AuthenticateUserRoute";
 import { CreateUserRoute } from "./CreateUserRoute";
 import { DeleteUserRoute } from "./DeleteUserRoute";

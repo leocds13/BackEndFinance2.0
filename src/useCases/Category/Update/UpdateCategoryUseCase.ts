@@ -1,6 +1,6 @@
 import { ErrorExeption } from "../../../entities/ErrorExeption";
-import { ICategoryRepository } from "../../../repositories/Category/ICategoryRepository";
-import { IUseCase } from "../../IUseCase";
+import { ICategoryRepository } from "../../../repositories/ICategoryRepository";
+import { IUseCase } from "../../../types";
 import { IUpdateCategoryRequestDTO } from "./UpdateCategoryDTO";
 
 export class UpdateCategoryUseCase implements IUseCase {

@@ -1,4 +1,4 @@
-import { PrismaPostgresUsersReporitory } from "../../../repositories/Users/implementations/PrismaPostgresRepository";
+import { PrismaPostgresUsersReporitory } from "../../../repositories/Prisma/Postgres/User";
 import { DeleteUserController } from "./DeleteUserController";
 import { DeleteUserUseCase } from "./DeleteUserUseCase";
 

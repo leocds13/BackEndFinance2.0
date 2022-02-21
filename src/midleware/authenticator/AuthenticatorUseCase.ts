@@ -1,9 +1,9 @@
 import { ErrorExeption } from "../../entities/ErrorExeption";
 import { User } from "../../entities/User";
 import { ITokenProvider } from "../../providers/TokenProviders/ITokenProvider";
-import { IBlackListTokensRepository } from "../../repositories/BlackListTokens/IBlackListTokensRepository";
-import { IUsersRepository } from "../../repositories/Users/IUsersRepository";
-import { IUseCase } from "../../useCases/IUseCase";
+import { IBlackListTokensRepository } from "../../repositories/IBlackListTokensRepository";
+import { IUsersRepository } from "../../repositories/IUsersRepository";
+import { IUseCase } from "../../types";
 
 export class AuthenticatorUseCase implements IUseCase {
 	constructor(

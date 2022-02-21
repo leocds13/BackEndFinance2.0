@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import { Token } from "../../../entities/Token";
-import { IBlackListTokensRepository } from "../IBlackListTokensRepository";
+import { IBlackListTokensRepository } from "../../IBlackListTokensRepository";
 
 export class PrismaPostgresBlackListTokensReporitory
 	implements IBlackListTokensRepository

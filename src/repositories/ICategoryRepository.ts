@@ -1,4 +1,4 @@
-import { Category } from "../../entities/Category";
+import { Category } from "../entities/Category";
 
 export interface ICategoryRepository {
 	findById(id: string): Promise<Category | null>;

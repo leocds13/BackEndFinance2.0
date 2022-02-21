@@ -1,4 +1,4 @@
-import { Token } from "../../entities/Token";
+import { Token } from "../entities/Token";
 
 export interface IBlackListTokensRepository {
 	findByToken(token: string): Promise<Token | null>;

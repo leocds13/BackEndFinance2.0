@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import { ParamsDictionary } from "express-serve-static-core";
-import { IController } from "../../IController";
+import { IController } from "../../../types";
 import {
 	ILoginUserRequestDTO,
 	LoginUserValidationSchema,

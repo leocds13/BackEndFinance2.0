@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import { checkSchema } from "express-validator";
 import { User } from "../../../entities/User";
 import { validate } from "../../../midleware/validate";
-import { IController } from "../../IController";
+import { IController } from "../../../types";
 import { RequestCategoryValidationSchema } from "./RequestCategoryDTO";
 import { RequestCategoryUseCase } from "./RequestCategoryUseCase";
 

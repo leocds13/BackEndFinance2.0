@@ -1,4 +1,4 @@
-import { PrismaPostgresCategoryReporitory } from "../../../repositories/Category/implementations/PrismaPostgresRepository";
+import { PrismaPostgresCategoryReporitory } from "../../../repositories/Prisma/Postgres/Category";
 import { UpdateCategoryController } from "./UpdateCategoryController";
 import { UpdateCategoryUseCase } from "./UpdateCategoryUseCase";
 

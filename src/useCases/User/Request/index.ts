@@ -1,5 +1,5 @@
 import { MailtrapMailProvider } from "../../../providers/MailProviders/implementations/MailtrapMailProvider";
-import { PrismaPostgresUsersReporitory } from "../../../repositories/Users/implementations/PrismaPostgresRepository";
+import { PrismaPostgresUsersReporitory } from "../../../repositories/Prisma/Postgres/User";
 import { RequestUserController } from "./RequestUserController";
 import { RequestUserUseCase } from "./RequestUserUseCase";
 
